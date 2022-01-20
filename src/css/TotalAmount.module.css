@@ -1,0 +1,40 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border: 2px solid #fff;
+  width: 320px;
+  border-radius: 12px;
+  margin: 36px 0; 
+  padding: 16px 0 16px;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+}
+
+.left span:last-child, .right span:last-child{
+margin-top: 16px;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.mainText {
+  font-size: 20px;
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+.spendingBalance {
+  color: red;
+}
+
+.savingsBalance {
+  color: #FEB59C; 
+}
+

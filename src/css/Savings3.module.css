@@ -1,0 +1,66 @@
+.superContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 1rem;
+}
+/* initial goals */
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.formContainer input {
+  margin: 0 0 16px;
+}
+
+.formContainer button {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+/* initial goals end */
+
+/* set goals begin */
+.setGoalsContainer {
+  display: flex;
+  flex-direction: row;
+  margin-top: 16px;
+}
+
+.eachGoal {
+  display: flex;
+  flex-direction: column;
+  margin: 8px 32px;
+}
+
+.eachGoal img {
+  width: 80px;
+}
+
+.amountContainer {
+  margin-top: 16px;
+}
+
+.amountContainer span{
+padding-right: 16px;
+}
+
+.pen {
+  cursor: pointer;
+}
+
+.editContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.editContainer input{
+  width: 72px;
+}
+
+.editContainer button {
+  margin-top: 16px;
+}

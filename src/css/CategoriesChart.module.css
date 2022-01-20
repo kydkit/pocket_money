@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid #fff;
+  width: 320px;
+  border-radius: 12px;
+  margin: 36px 0; 
+  padding: 16px 0 16px;
+}
+
+.mainText {
+  font-size: 24px;
+  margin: 0 0 24px 0;
+}

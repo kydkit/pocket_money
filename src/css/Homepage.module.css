@@ -1,0 +1,29 @@
+.masterContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.superContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.intro {
+  margin-top: 32px;
+}
+
+@media (min-width: 760px) {
+  .superContainer {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-around;
+  }
+
+  .totalAmountContainer, .savingsContainer {
+    margin-top: 32px;
+  }
+
+
+}
