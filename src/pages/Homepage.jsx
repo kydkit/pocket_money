@@ -25,19 +25,25 @@ const Homepage = () => {
         )}
         {data && (
           <div className={style.superContainer}>
-            <div className={style.transactionContainer}>
+            <div
+              className={`${style.transactionContainer} ${style.transaction}`}
+            >
               <TransactionDetails data={data} isLoading={isLoading} />
             </div>
-            <div className={style.enterAmountContainer}>
+            <div
+              className={`${style.enterAmountContainer} ${style.enterAmount}`}
+            >
               <EnterAmount />
             </div>
-            <div className={style.totalAmountContainer}>
+            <div
+              className={`${style.totalAmountContainer} ${style.totalAmount}`}
+            >
               <TotalAmount data={data} />
             </div>
-            <div className={style.savingsContainer}>
+            <div className={`${style.savingsContainer} ${style.savings}`}>
               <Savings3 data={data} />
             </div>
-            <div className={style.chartContainer}>
+            <div className={`${style.chartContainer} ${style.chart}`}>
               <CategoriesChart data={data} />
             </div>
           </div>

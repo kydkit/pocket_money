@@ -1,4 +1,4 @@
-.masterContainer {
+/* .masterContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,4 +26,47 @@
   }
 
 
+} */
+
+.masterContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
 }
+
+@media (min-width: 760px) {
+  .superContainer {
+    display: grid;
+    grid-column-gap: 3rem;
+    grid-row-gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+  }
+  }
+
+  @media(min-width: 1280px){
+    .superContainer {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-column-gap: 8rem;
+      grid-row-gap: 2px;
+      grid-template-areas: 
+      'trans ent cat'
+      "trans totes save"
+    }
+
+    .transaction{
+      grid-area: trans;
+    }
+    .enterAmount{
+      grid-area: ent;
+    }
+    .totalAmount {
+      grid-area: totes;
+    }
+    .savings {
+      grid-area: save;
+    }
+    .chart {
+      grid-area: cat;
+    }
+  }

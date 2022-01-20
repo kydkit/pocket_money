@@ -22,6 +22,7 @@ const EnterAmount = () => {
 
   const handleTransaction = async (e) => {
     e.preventDefault();
+    console.log("submitting");
 
     if (!amountRef.current.value.length || !nameRef.current.value.length) {
       setError("Please enter transaction name and/or amount");

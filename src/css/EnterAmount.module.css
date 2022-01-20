@@ -76,3 +76,28 @@
   width: 100% !important; 
   cursor: pointer;
 }
+
+@media (min-width: 760px){
+  .radioContainer p:first-child {
+    margin-top: 32px;
+  }
+}
+
+@media (min-width: 1280px){
+  .radioContainer p:first-child {
+    margin-top: 16px;
+  }
+
+  .submitButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    white-space: nowrap;
+    width: 100%;
+  }
+
+  .submitButtons button:last-child{
+    width: 100%;
+    margin-left: 1rem;
+  }
+}

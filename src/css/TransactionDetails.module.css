@@ -17,7 +17,6 @@
   width: 320px;
   max-height: 235px;
   overflow-y: scroll;
-  /* background-color: rgb(23, 32, 69); */
 }
 
 .ulContainer::-webkit-scrollbar {
@@ -80,8 +79,13 @@
 }
 
 @media (min-width: 760px) {
-
   .ulContainer {
     max-height: 420px;
+  }
+}
+
+@media (min-width: 760px){
+  .ulContainer{
+    max-height: 540px;
   }
 }

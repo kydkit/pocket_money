@@ -65,7 +65,7 @@ const Savings3 = ({ data }) => {
 
   return (
     <div className={style.superContainer}>
-      <h2>Savings Goal</h2>
+      <p className={style.mainText}>Savings Goal</p>
       {/* This is visible if original goals have been set */}
       {goalsData && goalsData.length !== 0 ? (
         <div className={style.setGoalsContainer}>

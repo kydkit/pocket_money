@@ -75,7 +75,7 @@ const CategoriesChart = ({ data }) => {
               />
             ))}
           </Pie>
-          <Legend align="center" />
+          {/* <Legend align="center" /> */}
           <Tooltip />
         </PieChart>
       </div>
