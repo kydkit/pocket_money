@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
+import useGetMonth from "../hooks/useGetMonth";
 import useGetFinances from "../hooks/useGetFinances";
 import { useAuthContext } from "../context/AuthContext";
 import { firebaseTimestampToStringMonth } from "../helpers/month";
-import useGetMonth from "../hooks/useGetMonth";
 //components
 import EnterAmount from "../components/EnterAmount";
 import TotalAmount from "../components/TotalAmount";
@@ -98,6 +98,7 @@ const Homepage = () => {
     setMonth(month + 1);
   };
 
+  //filtering only chosen month's data
   const dataCurrentMonth =
     data &&
     data.filter(
@@ -109,7 +110,9 @@ const Homepage = () => {
       <div className={style.masterContainer}>
         {currentUser && (
           <div className={style.headingContainer}>
-            <p>Hi, you are logged in as {currentUser.email}</p>
+            <p className="greet">
+              Hi, you are logged in as {currentUser.email}
+            </p>
             <div className={style.optionContainer}>
               <FontAwesomeIcon
                 onClick={handleBack}

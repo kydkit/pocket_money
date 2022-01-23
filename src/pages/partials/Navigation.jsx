@@ -13,7 +13,7 @@ const Navigation = () => {
       </Link>
 
       {currentUser ? (
-        <Link to="/logout" className={style.aLink}>
+        <Link to="/logout" className={`${style.aLink} nav-logout`}>
           Log out
         </Link>
       ) : (
