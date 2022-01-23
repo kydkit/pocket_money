@@ -1,38 +1,39 @@
-/* .masterContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.superContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.intro {
-  margin-top: 32px;
-}
-
-@media (min-width: 760px) {
-  .superContainer {
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: space-around;
-  }
-
-  .totalAmountContainer, .savingsContainer {
-    margin-top: 32px;
-  }
-
-
-} */
 
 .masterContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 1rem;
+}
+
+.headingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 24px;
+}
+
+.optionContainer {
+  display: flex; 
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.monthName {
+  margin: 0 1.5rem;
+  font-size: 1.5rem;
+  width: 160px;
+  text-align: center;
+}
+
+.error {
+  color: gray;
+}
+
+.arrow {
+  cursor: pointer; 
 }
 
 @media (min-width: 760px) {
@@ -48,10 +49,10 @@
     .superContainer {
       grid-template-columns: 1fr 1fr 1fr;
       grid-column-gap: 8rem;
-      grid-row-gap: 2px;
+      grid-row-gap: 2rem;
       grid-template-areas: 
       'trans ent cat'
-      "trans totes save"
+      "totes save ."
     }
 
     .transaction{

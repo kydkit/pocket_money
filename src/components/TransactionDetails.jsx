@@ -11,7 +11,8 @@ const TransactionDetails = ({ data, isLoading, month }) => {
   };
 
   return (
-    <>
+    <div className={style.container}>
+      <p className={style.mainText}>Transactions</p>
       {isLoading && <p>Loading...</p>}
 
       {data && (
@@ -54,7 +55,7 @@ const TransactionDetails = ({ data, isLoading, month }) => {
           )}
         </>
       )}
-    </>
+    </div>
   );
 };
 

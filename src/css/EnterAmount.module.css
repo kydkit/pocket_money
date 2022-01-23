@@ -94,6 +94,7 @@
     justify-content: space-between;
     white-space: nowrap;
     width: 100%;
+    margin-top: 16px;
   }
 
   .submitButtons button:last-child{

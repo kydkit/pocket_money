@@ -14,7 +14,6 @@ import style from "../css/Homepage.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronCircleLeft } from "@fortawesome/free-solid-svg-icons";
 import { faChevronCircleRight } from "@fortawesome/free-solid-svg-icons";
-import styleMonthly from "../css/MonthOption.module.css";
 
 const Homepage = () => {
   const { currentUser } = useAuthContext();
@@ -99,63 +98,57 @@ const Homepage = () => {
     setMonth(month + 1);
   };
 
-  const dataCurrentMonth = data.filter(
-    (item) => month === firebaseTimestampToStringMonth(item.timestamp)
-  );
+  const dataCurrentMonth =
+    data &&
+    data.filter(
+      (item) => month === firebaseTimestampToStringMonth(item.timestamp)
+    );
 
   return (
     <>
       <div className={style.masterContainer}>
         {currentUser && (
-          <p className={style.intro}>
-            Hi, you are logged in as {currentUser.email}
-          </p>
+          <div className={style.headingContainer}>
+            <p>Hi, you are logged in as {currentUser.email}</p>
+            <div className={style.optionContainer}>
+              <FontAwesomeIcon
+                onClick={handleBack}
+                icon={faChevronCircleLeft}
+                size="lg"
+                className={style.arrow}
+              />
+              <h1 className={style.monthName}>{currentMonthString}</h1>
+              <FontAwesomeIcon
+                onClick={handleNext}
+                icon={faChevronCircleRight}
+                size="lg"
+                className={style.arrow}
+              />
+            </div>
+            <p className={isError ? style.error : ""}>
+              {isError ? "We only have 2022 monthly transactions" : ""}
+            </p>
+          </div>
         )}
-        {data && (
-          <div className={styleMonthly.superContainer}>
-            <div className={styleMonthly.container}>
-              <div>
-                <h1 className={styleMonthly.mainText}>Transactions</h1>
-              </div>
-
-              <div className={styleMonthly.optionContainer}>
-                <FontAwesomeIcon
-                  onClick={handleBack}
-                  icon={faChevronCircleLeft}
-                  size="lg"
-                  className={style.arrow}
-                />
-                <span className={style.monthName}>{currentMonthString}</span>
-                <FontAwesomeIcon
-                  onClick={handleNext}
-                  icon={faChevronCircleRight}
-                  size="lg"
-                  className={style.arrow}
-                />
-              </div>
-              <p className={isError ? style.error : ""}>
-                {isError ? "We only have 2022 monthly transactions" : ""}
-              </p>
+        {dataCurrentMonth && (
+          <div className={style.superContainer}>
+            <div className={style.transaction}>
               <TransactionDetails
                 data={dataCurrentMonth}
                 isLoading={isLoading}
                 month={month}
               />
             </div>
-            <div
-              className={`${style.enterAmountContainer} ${style.enterAmount}`}
-            >
+            <div className={style.enterAmount}>
               <EnterAmount />
             </div>
-            <div
-              className={`${style.totalAmountContainer} ${style.totalAmount}`}
-            >
+            <div className={style.totalAmount}>
               <TotalAmount data={dataCurrentMonth} />
             </div>
-            <div className={`${style.savingsContainer} ${style.savings}`}>
-              <Savings3 data={data} />
+            <div className={style.savings}>
+              <Savings3 data={dataCurrentMonth} />
             </div>
-            <div className={`${style.chartContainer} ${style.chart}`}>
+            <div className={style.chart}>
               <CategoriesChart data={dataCurrentMonth} />
             </div>
           </div>
