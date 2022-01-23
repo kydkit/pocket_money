@@ -22,7 +22,6 @@ const EnterAmount = () => {
 
   const handleTransaction = async (e) => {
     e.preventDefault();
-    console.log("submitting");
 
     if (!amountRef.current.value.length || !nameRef.current.value.length) {
       setError("Please enter transaction name and/or amount");
@@ -64,7 +63,6 @@ const EnterAmount = () => {
   };
 
   const handleAmount = (e) => {
-    console.log(e.target.value);
     if (!e.target.value.trim()) {
       setError(null);
     }

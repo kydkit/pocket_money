@@ -26,7 +26,6 @@ const Homepage = () => {
   const [currentMonthString, setCurrentMonthString] = useState();
 
   useEffect(() => {
-    console.log({ month });
     setCurrentMonthString(monthDigitToString(month));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [month]);
@@ -79,8 +78,6 @@ const Homepage = () => {
   };
 
   const handleBack = () => {
-    console.log("going back");
-    console.log({ month });
     if (month === 0) {
       setIsError(true);
       return;
@@ -92,6 +89,9 @@ const Homepage = () => {
   const handleNext = () => {
     if (month === 11) {
       setIsError(true);
+      return;
+    }
+    if (month > currentMonthDigit) {
       return;
     }
     setIsError(false);

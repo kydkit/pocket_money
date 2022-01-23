@@ -14,7 +14,6 @@ const Signup = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("submitting form");
     setError(null);
 
     if (passwordRef.current.value !== passwordConfirmRef.current.value) {

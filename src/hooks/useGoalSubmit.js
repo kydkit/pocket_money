@@ -17,7 +17,6 @@ const useGoalSubmit = () => {
   ) => {
     e.preventDefault();
 
-    console.log("submitting");
     if (
       !firstGoalAmountRef.current.value ||
       !secondGoalAmountRef.current.value

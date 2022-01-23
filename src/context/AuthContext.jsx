@@ -26,7 +26,6 @@ const AuthContextProvider = ({ children }) => {
   };
 
   const logout = () => {
-    console.log("logging out user");
     return signOut(auth);
   };
 

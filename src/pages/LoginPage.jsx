@@ -15,7 +15,6 @@ const LoginPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("submitting");
     setError(null);
 
     try {
