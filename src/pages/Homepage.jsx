@@ -1,9 +1,10 @@
 import useGetFinances from "../hooks/useGetFinances";
 import { useAuthContext } from "../context/AuthContext";
+
 //components
 import EnterAmount from "../components/EnterAmount";
 import TotalAmount from "../components/TotalAmount";
-import TransactionDetails from "../components/TransactionDetails";
+import MonthlyTransactions from "../components/MonthlyTransactions";
 //style
 import style from "../css/Homepage.module.css";
 import CategoriesChart from "../components/CategoriesChart";
@@ -28,7 +29,7 @@ const Homepage = () => {
             <div
               className={`${style.transactionContainer} ${style.transaction}`}
             >
-              <TransactionDetails data={data} isLoading={isLoading} />
+              <MonthlyTransactions data={data} isLoading={isLoading} />
             </div>
             <div
               className={`${style.enterAmountContainer} ${style.enterAmount}`}
