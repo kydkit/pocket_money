@@ -1,6 +1,5 @@
 import React from "react";
 import { firebaseTimestampToString } from "../helpers/time";
-import { firebaseTimestampToStringMonth } from "../helpers/month";
 import { doc, deleteDoc } from "firebase/firestore";
 import { db } from "../firebase";
 import style from "../css/TransactionDetails.module.css";
@@ -11,10 +10,6 @@ const TransactionDetails = ({ data, isLoading, month }) => {
     await deleteDoc(ref);
   };
 
-  const dataCurrentMonth = data.filter(
-    (item) => month === firebaseTimestampToStringMonth(item.timestamp)
-  );
-
   return (
     <>
       {isLoading && <p>Loading...</p>}
@@ -23,7 +18,7 @@ const TransactionDetails = ({ data, isLoading, month }) => {
         <>
           {data.length ? (
             <ul className={style.ulContainer}>
-              {dataCurrentMonth.map((item, index) => {
+              {data.map((item, index) => {
                 const timestamp = firebaseTimestampToString(item.timestamp);
                 return (
                   <li key={index} className={style.listContainer}>
