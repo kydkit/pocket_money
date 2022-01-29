@@ -30,7 +30,7 @@ const EnterAmount = () => {
       setError("Please select a category");
       return;
     } else if (!amountRef.current.value.match(RegExp("^[0-9]*$"))) {
-      setError("Please enter a number");
+      setError("Please only enter numbers");
       return;
     }
 

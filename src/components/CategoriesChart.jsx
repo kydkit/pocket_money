@@ -52,36 +52,40 @@ const CategoriesChart = ({ data }) => {
     { category: "Other", amount: otherTotal }
   );
 
-  return data.length ? (
+  return (
     <>
       <div className={style.container}>
         <p className={style.mainText}>Spent by category</p>
-
-        <PieChart width={320} height={250}>
-          <Pie
-            data={newDataTotalPerCategory}
-            dataKey="amount"
-            nameKey="category"
-            cx="50%"
-            cy="50%"
-            outerRadius={90}
-            stroke="#fff"
-            fill="#262651"
-          >
-            {data.map((entry, index) => (
-              <Cell
-                key={`cell-${index}`}
-                fill={COLORS[index % COLORS.length]}
-              />
-            ))}
-          </Pie>
-          {/* <Legend align="center" /> */}
-          <Tooltip />
-        </PieChart>
+        {data.length ? (
+          <PieChart width={320} height={250}>
+            <Pie
+              data={newDataTotalPerCategory}
+              dataKey="amount"
+              nameKey="category"
+              cx="50%"
+              cy="50%"
+              outerRadius={90}
+              stroke="#fff"
+              fill="#262651"
+            >
+              {data.map((entry, index) => (
+                <Cell
+                  key={`cell-${index}`}
+                  fill={COLORS[index % COLORS.length]}
+                />
+              ))}
+            </Pie>
+            {/* <Legend align="center" /> */}
+            <Tooltip />
+          </PieChart>
+        ) : (
+          <div className={style.emptyPieContainer}>
+            <img src="assets/chart-pie-solid.svg" alt="pie chart" />
+            <p>Start adding your transactions to activate graph</p>
+          </div>
+        )}
       </div>
     </>
-  ) : (
-    ""
   );
 };
 

@@ -153,7 +153,7 @@ const Savings3 = ({ data }) => {
             <input
               type="text"
               ref={firstGoalAmountRef}
-              placeholder={"1st goal"}
+              placeholder={"Set 1st goal"}
               required
             />
           </div>
@@ -161,7 +161,7 @@ const Savings3 = ({ data }) => {
             <input
               type="text"
               ref={secondGoalAmountRef}
-              placeholder={"2nd goal"}
+              placeholder={"Set 2nd goal"}
               required
             />
           </div>

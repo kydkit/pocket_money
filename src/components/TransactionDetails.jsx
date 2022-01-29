@@ -51,7 +51,10 @@ const TransactionDetails = ({ data, isLoading, month }) => {
               })}
             </ul>
           ) : (
-            <p>You have no transactions. Start saving!</p>
+            <div className={style.receiptContainer}>
+              <img src="assets/receipt-solid.svg" alt="receipt" />
+              <p>Start adding your transactions to see them here</p>
+            </div>
           )}
         </>
       )}

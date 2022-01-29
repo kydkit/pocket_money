@@ -6,7 +6,7 @@
 }
 
 .mainText {
-  font-size: 24px;
+  font-size: 32px;
   margin: 0 0 24px 0;
   font-weight: 600;
 }
@@ -78,6 +78,22 @@
 .closeIcon {
   width: 20px;
   cursor: pointer;
+}
+
+.receiptContainer {
+  display: grid;
+  place-items: center;
+  width: 280px;
+  margin-top: 40px;
+}
+
+.receiptContainer p{
+  text-align: center;
+}
+
+.receiptContainer img {
+  width: 140px;
+  margin-bottom: 12px;
 }
 
 @media (min-width: 760px) {
