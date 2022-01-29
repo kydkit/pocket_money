@@ -49,7 +49,9 @@ const LoginPage = () => {
           ref={passwordRef}
           required
         />
-        <button type="submit">Log in</button>
+        <button type="submit" className="login-button">
+          Log in
+        </button>
       </form>
 
       {loading ? <span>...Loading</span> : ""}

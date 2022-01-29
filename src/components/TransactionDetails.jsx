@@ -41,7 +41,7 @@ const TransactionDetails = ({ data, isLoading, month }) => {
                         <img
                           src="../assets/close-icon.svg"
                           alt="close-icon"
-                          className={style.closeIcon}
+                          className={`${style.closeIcon} close-icon`}
                           onClick={() => deleteTransaction(item.id)}
                         />
                       </span>

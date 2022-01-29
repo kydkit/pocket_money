@@ -76,4 +76,7 @@ padding-right: 16px;
   .setGoalsContainer {
     margin-top: 0px;
   }
+  .mainText {
+    margin: 0;
+  }
 }

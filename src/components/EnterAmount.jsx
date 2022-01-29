@@ -162,9 +162,6 @@ const EnterAmount = () => {
               onChange={(e) => handleCategory(e.target.value)}
             />
             <label htmlFor="categoryOther">Other</label>
-          </div>
-          <hr className={style.breakingLine} />
-          <div className={`${style.radiotoolbar} ${style.savingsRadio}`}>
             <input
               type="radio"
               value="Savings"
@@ -173,7 +170,7 @@ const EnterAmount = () => {
               ref={savingsRef}
               onChange={(e) => handleCategory(e.target.value)}
             />
-            <label htmlFor="categorySavings">Savings</label>
+            <label htmlFor="categorySavings">Savings*</label>
           </div>
         </div>
 

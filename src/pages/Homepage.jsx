@@ -118,14 +118,14 @@ const Homepage = () => {
                 onClick={handleBack}
                 icon={faChevronCircleLeft}
                 size="lg"
-                className={style.arrow}
+                className={`${style.arrow} back-arrow`}
               />
               <h1 className={style.monthName}>{currentMonthString}</h1>
               <FontAwesomeIcon
                 onClick={handleNext}
                 icon={faChevronCircleRight}
                 size="lg"
-                className={style.arrow}
+                className={`${style.arrow} next-arrow`}
               />
             </div>
             <p className={isError ? style.error : ""}>
