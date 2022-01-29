@@ -1,5 +1,5 @@
 import style from "../css/CategoriesChart.module.css";
-import { PieChart, Tooltip, Pie, Cell, Legend } from "recharts";
+import { PieChart, Tooltip, Pie, Cell } from "recharts";
 
 const CategoriesChart = ({ data }) => {
   const COLORS = ["#070760", "#4c4c9d", "#9d9df7", "#d0d0ff", "#262651"];
@@ -75,7 +75,6 @@ const CategoriesChart = ({ data }) => {
                 />
               ))}
             </Pie>
-            {/* <Legend align="center" /> */}
             <Tooltip />
           </PieChart>
         ) : (
