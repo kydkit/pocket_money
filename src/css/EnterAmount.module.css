@@ -9,11 +9,25 @@
 .inputContainer {
   display: flex;
   flex-direction: row;
-  margin-bottom: 16px;
+  flex-wrap: wrap;
+  max-width: 300px;
 }
 
 .inputContainer input {
-  width: 100%;
+  width: 136px;
+  margin-bottom: 16px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
 
 .inputContainer input::placeholder {
@@ -22,6 +36,10 @@
 
 .inputContainer input:first-child {
   margin-right: 16px;
+}
+
+.datepicker {
+  color: rgb(200, 200, 200)
 }
 
 .categoryContainer {

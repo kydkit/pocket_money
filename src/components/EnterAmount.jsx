@@ -58,6 +58,7 @@ const EnterAmount = () => {
     shoppingRef.current.checked = false;
     otherRef.current.checked = false;
     setCategory(null);
+    setStartDate(new Date());
     setError(null);
   };
 
@@ -70,8 +71,6 @@ const EnterAmount = () => {
       setError(null);
     }
   };
-
-  console.log({ startDate });
 
   const handleReset = (e) => {
     e.preventDefault();
@@ -86,6 +85,7 @@ const EnterAmount = () => {
     shoppingRef.current.checked = false;
     otherRef.current.checked = false;
     setCategory(null);
+    setStartDate(new Date());
     setError(null);
   };
 
@@ -101,14 +101,17 @@ const EnterAmount = () => {
             ref={amountRef}
             onChange={handleAmount}
           />
-        </div>
-        <div>
           <DatePicker
-            dateFormat="dd-MM-yyyy"
+            className={style.datepicker}
+            placeholderText="Select a date"
+            dateFormat="dd/MM/yyyy"
             selected={startDate}
+            minDate={new Date("01/01/2022")}
+            maxDate={new Date()}
             onChange={(date) => setStartDate(date)}
           />
         </div>
+
         {error ? <span>{error}</span> : <span></span>}
 
         {/* radio buttons */}
