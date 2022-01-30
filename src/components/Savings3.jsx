@@ -25,6 +25,8 @@ const Savings3 = ({ data }) => {
   const changeAmount1Ref = useRef();
   const changeAmount2Ref = useRef();
 
+  const [errorNumberOnly, setErrorNumberOnly] = useState();
+
   const totalSavings = Math.abs(
     data
       .filter((item) => item.category === "Savings")
@@ -37,6 +39,9 @@ const Savings3 = ({ data }) => {
     e.preventDefault();
     if (!changeAmount1Ref.current.value) {
       return;
+    } else if (!changeAmount1Ref.current.value.match(RegExp("^[0-9]*$"))) {
+      setErrorNumberOnly("Please only enter numbers");
+      return;
     }
     // get that goal
     const goalRef = doc(db, "goals", goalsData[0]._id);
@@ -45,12 +50,16 @@ const Savings3 = ({ data }) => {
       firstGoalAmount: changeAmount1Ref.current.value,
     });
     //close the edit field when done
+    setErrorNumberOnly("");
     setShow1(false);
   };
   //logic to change amount 2
   const handleAmount2Change = async (e) => {
     e.preventDefault();
     if (!changeAmount2Ref.current.value) {
+      return;
+    } else if (!changeAmount2Ref.current.value.match(RegExp("^[0-9]*$"))) {
+      setErrorNumberOnly("Please only enter numbers");
       return;
     }
     // get that goal
@@ -60,6 +69,7 @@ const Savings3 = ({ data }) => {
       secondGoalAmount: changeAmount2Ref.current.value,
     });
     //close the edit field when done
+    setErrorNumberOnly("");
     setShow2(false);
   };
 
@@ -83,6 +93,7 @@ const Savings3 = ({ data }) => {
                 className={style.pen}
               />
             </div>
+
             {/* If editing first amount, show this form */}
             {show1 ? (
               <form
@@ -116,6 +127,7 @@ const Savings3 = ({ data }) => {
                 className={style.pen}
               />
             </div>
+
             {/* If editing second amount, show this form */}
             {show2 ? (
               <form
@@ -128,6 +140,7 @@ const Savings3 = ({ data }) => {
                   ref={changeAmount2Ref}
                   required
                 />
+
                 <button className="">Save</button>
               </form>
             ) : (
@@ -139,7 +152,12 @@ const Savings3 = ({ data }) => {
         ""
       )}
 
-      <p>{error}</p>
+      {error ? <p>{error}</p> : ""}
+      {errorNumberOnly ? (
+        <span className={style.errorMsg}>{errorNumberOnly}</span>
+      ) : (
+        ""
+      )}
 
       {/* ----This is visible if original goals haven't been set---- */}
       {goalsData && goalsData.length === 0 ? (

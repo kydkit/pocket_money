@@ -73,6 +73,10 @@ padding-right: 16px;
   margin-top: 16px;
 }
 
+.errorMsg {
+  margin-top: 16px;
+}
+
 @media (min-width: 1280px){
   .setGoalsContainer {
     margin-top: 0 0 24px 0;

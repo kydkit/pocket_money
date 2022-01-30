@@ -22,6 +22,12 @@ const useGoalSubmit = () => {
       !secondGoalAmountRef.current.value
     ) {
       setError("Please enter both amount");
+    } else if (
+      !firstGoalAmountRef.current.value.match(RegExp("^[0-9]*$")) ||
+      !secondGoalAmountRef.current.value.match(RegExp("^[0-9]*$"))
+    ) {
+      setError("Please only enter numbers");
+      return;
     }
 
     const goalId = uuidv4();
