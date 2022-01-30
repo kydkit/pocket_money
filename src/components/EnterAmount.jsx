@@ -2,6 +2,8 @@ import { useRef, useState } from "react";
 import { db } from "../firebase";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { useAuthContext } from "../context/AuthContext";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 //style
 import style from "../css/EnterAmount.module.css";
 
@@ -9,6 +11,7 @@ const EnterAmount = () => {
   const { currentUser } = useAuthContext();
   const [error, setError] = useState(null);
   const [category, setCategory] = useState(null);
+  const [startDate, setStartDate] = useState(new Date());
 
   const amountRef = useRef();
   const nameRef = useRef();
@@ -40,7 +43,7 @@ const EnterAmount = () => {
         category === "Income"
           ? parseInt(amountRef.current.value)
           : -parseInt(amountRef.current.value),
-      timestamp: serverTimestamp(),
+      timestamp: startDate,
       owner: currentUser.uid,
       category,
     });
@@ -67,6 +70,8 @@ const EnterAmount = () => {
       setError(null);
     }
   };
+
+  console.log({ startDate });
 
   const handleReset = (e) => {
     e.preventDefault();
@@ -95,6 +100,13 @@ const EnterAmount = () => {
             name="amount"
             ref={amountRef}
             onChange={handleAmount}
+          />
+        </div>
+        <div>
+          <DatePicker
+            dateFormat="dd-MM-yyyy"
+            selected={startDate}
+            onChange={(date) => setStartDate(date)}
           />
         </div>
         {error ? <span>{error}</span> : <span></span>}
