@@ -23,7 +23,7 @@ const Homepage = () => {
   const { currentMonthDigit } = useGetMonth();
   const [month, setMonth] = useState(currentMonthDigit);
   const [isError, setIsError] = useState();
-  const [error, setError] = useState();
+  const [setError] = useState();
   const [isTooFar, setIsTooFar] = useState();
   const [currentMonthString, setCurrentMonthString] = useState();
 
