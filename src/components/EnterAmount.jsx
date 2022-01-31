@@ -1,8 +1,8 @@
-import { useRef, useState } from "react";
-import { db } from "../firebase";
-import { collection, addDoc, serverTimestamp } from "firebase/firestore";
-import { useAuthContext } from "../context/AuthContext";
+import React, { useRef, useState } from "react";
 import DatePicker from "react-datepicker";
+import { db } from "../firebase";
+import { collection, addDoc } from "firebase/firestore";
+import { useAuthContext } from "../context/AuthContext";
 import "react-datepicker/dist/react-datepicker.css";
 //style
 import style from "../css/EnterAmount.module.css";

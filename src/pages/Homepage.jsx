@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import useGetMonth from "../hooks/useGetMonth";
 import useGetFinances from "../hooks/useGetFinances";
 import { useAuthContext } from "../context/AuthContext";
