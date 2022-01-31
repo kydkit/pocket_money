@@ -1,3 +1,4 @@
+import React from "react";
 import style from "../css/CategoriesChart.module.css";
 import { PieChart, Tooltip, Pie, Cell } from "recharts";
 

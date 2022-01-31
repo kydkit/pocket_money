@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 //fire
 import { doc, updateDoc } from "firebase/firestore";
 import { db } from "../firebase";
@@ -8,6 +8,7 @@ import { faPen } from "@fortawesome/free-solid-svg-icons";
 import useSavingsGoal from "../hooks/useSavingsGoal";
 import useGoalSubmit from "../hooks/useGoalSubmit";
 import style from "../css/Savings3.module.css";
+import confetti from "canvas-confetti";
 
 const Savings3 = ({ data }) => {
   //get the savings goals
@@ -73,6 +74,18 @@ const Savings3 = ({ data }) => {
     setShow2(false);
   };
 
+  //confetti goes off when saving reaches 2nd goal
+  useEffect(() => {
+    if (goalsData && totalSavings >= goalsData[0].secondGoalAmount) {
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.8 },
+      });
+    }
+    // eslint-disable-next-line
+  }, [totalSavings]);
+
   return (
     <div className={style.superContainer}>
       <p className={style.mainText}>Savings Goal</p>
@@ -119,6 +132,8 @@ const Savings3 = ({ data }) => {
             ) : (
               <img src="assets/star-white.svg" alt="white-star-icon" />
             )}
+
+            {/* {totalSavings >= goalsData[0].secondGoalAmount ? confetti : ""} */}
             <div className={style.amountContainer}>
               <span>{goalsData[0].secondGoalAmount}</span>
               <FontAwesomeIcon

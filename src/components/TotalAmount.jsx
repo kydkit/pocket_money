@@ -1,3 +1,4 @@
+import React from "react";
 import style from "../css/TotalAmount.module.css";
 
 const TotalAmount = ({ data }) => {
