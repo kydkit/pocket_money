@@ -8,7 +8,7 @@ import { faPen } from "@fortawesome/free-solid-svg-icons";
 import useSavingsGoal from "../hooks/useSavingsGoal";
 import useGoalSubmit from "../hooks/useGoalSubmit";
 import style from "../css/Savings3.module.css";
-import confetti from "canvas-confetti";
+// import confetti from "canvas-confetti";
 
 const Savings3 = ({ data }) => {
   //get the savings goals
@@ -75,16 +75,16 @@ const Savings3 = ({ data }) => {
   };
 
   //confetti goes off when saving reaches 2nd goal
-  useEffect(() => {
-    if (goalsData && totalSavings >= goalsData[0].secondGoalAmount) {
-      confetti({
-        particleCount: 100,
-        spread: 70,
-        origin: { y: 0.8 },
-      });
-    }
-    // eslint-disable-next-line
-  }, [totalSavings]);
+  // useEffect(() => {
+  //   if (goalsData && totalSavings >= goalsData[0].secondGoalAmount) {
+  //     confetti({
+  //       particleCount: 100,
+  //       spread: 70,
+  //       origin: { y: 0.8 },
+  //     });
+  //   }
+  //   // eslint-disable-next-line
+  // }, [totalSavings]);
 
   return (
     <div className={style.superContainer}>

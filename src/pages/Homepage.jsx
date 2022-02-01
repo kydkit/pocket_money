@@ -23,8 +23,9 @@ const Homepage = () => {
   const { currentMonthDigit } = useGetMonth();
   const [month, setMonth] = useState(currentMonthDigit);
   const [isError, setIsError] = useState();
-  const [setError] = useState();
-  const [isTooFar, setIsTooFar] = useState();
+  const [error, setError] = useState();
+  const [isTooAhead, setIsTooAhead] = useState();
+  const [tooAhead, setTooAhead] = useState();
   const [currentMonthString, setCurrentMonthString] = useState();
 
   useEffect(() => {
@@ -81,24 +82,25 @@ const Homepage = () => {
 
   const handleBack = () => {
     if (month === 0) {
-      setIsTooFar(false);
       setIsError(true);
+      setIsTooAhead(false);
       setError("We only have 2022 monthly transactions");
       return;
     }
     setIsError(false);
+    setIsTooAhead(false);
     setMonth(month - 1);
   };
 
   const handleNext = () => {
     if (month === 11) {
       setIsError(true);
-      setError("The future's bright, but we aren't there yet");
+      setError("We only have 2022 monthly transactions");
       return;
-    }
-    if (month === currentMonthDigit) {
+    } else if (month === currentMonthDigit) {
       setIsError(false);
-      setIsTooFar(true);
+      setIsTooAhead(true);
+      setTooAhead("The future's bright, but we aren't there yet");
       return;
     }
     setIsError(false);
@@ -135,9 +137,9 @@ const Homepage = () => {
                 className={`${style.arrow} next-arrow`}
               />
             </div>
-            <p className={isError || isTooFar ? style.error : ""}>
-              {isError ? "We only have 2022 monthly transactions" : ""}
-              {isTooFar ? "The future's bright, but we aren't there yet" : ""}
+            <p className={isError || isTooAhead ? style.error : ""}>
+              {isError ? error : ""}
+              {isTooAhead ? tooAhead : ""}
             </p>
           </div>
         )}
