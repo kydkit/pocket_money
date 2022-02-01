@@ -187,6 +187,7 @@ const EnterAmount = () => {
             />
             <label htmlFor="categorySavings">Savings*</label>
           </div>
+          <p>*Savings value will not be shown in the chart</p>
         </div>
 
         <div className={style.submitButtons}>

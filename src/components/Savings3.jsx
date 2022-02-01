@@ -54,6 +54,7 @@ const Savings3 = ({ data }) => {
     setErrorNumberOnly("");
     setShow1(false);
   };
+
   //logic to change amount 2
   const handleAmount2Change = async (e) => {
     e.preventDefault();

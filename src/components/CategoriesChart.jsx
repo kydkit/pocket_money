@@ -53,11 +53,15 @@ const CategoriesChart = ({ data }) => {
     { category: "Other", amount: otherTotal }
   );
 
+  const spentData = data.filter(
+    (item) => item.category !== "Savings" && item.category !== "Income"
+  );
+
   return (
     <>
       <div className={style.container}>
         <p className={style.mainText}>Spent by category</p>
-        {data.length ? (
+        {spentData.length ? (
           <PieChart width={320} height={250}>
             <Pie
               data={newDataTotalPerCategory}
@@ -69,7 +73,7 @@ const CategoriesChart = ({ data }) => {
               stroke="#fff"
               fill="#262651"
             >
-              {data.map((entry, index) => (
+              {spentData.map((entry, index) => (
                 <Cell
                   key={`cell-${index}`}
                   fill={COLORS[index % COLORS.length]}
@@ -81,7 +85,7 @@ const CategoriesChart = ({ data }) => {
         ) : (
           <div className={style.emptyPieContainer}>
             <img src="assets/chart-pie-solid.svg" alt="pie chart" />
-            <p>Start adding your transactions to activate graph</p>
+            <p>Start adding your withdrawal transactions to activate graph</p>
           </div>
         )}
       </div>
