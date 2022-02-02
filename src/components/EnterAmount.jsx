@@ -93,8 +93,15 @@ const EnterAmount = () => {
     <div>
       <form className={style.form} autoComplete="off">
         <div className={style.inputContainer}>
-          <input type="text" placeholder="Name" name="name" ref={nameRef} />
           <input
+            id="name"
+            type="text"
+            placeholder="Name"
+            name="name"
+            ref={nameRef}
+          />
+          <input
+            id="amount"
             type="text"
             placeholder="Amount"
             name="amount"
@@ -102,6 +109,7 @@ const EnterAmount = () => {
             onChange={handleAmount}
           />
           <DatePicker
+            id="date-picker"
             className={style.datepicker}
             placeholderText="Select a date"
             dateFormat="dd/MM/yyyy"

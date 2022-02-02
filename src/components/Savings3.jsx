@@ -104,7 +104,7 @@ const Savings3 = ({ data }) => {
               <FontAwesomeIcon
                 icon={faPen}
                 onClick={() => setShow1(!show1)}
-                className={style.pen}
+                className={`${style.pen} pen`}
               />
             </div>
 
@@ -115,6 +115,7 @@ const Savings3 = ({ data }) => {
                 className={style.editContainer}
               >
                 <input
+                  id="edit-first-goal"
                   type="text"
                   placeholder="amount"
                   ref={changeAmount1Ref}
@@ -140,7 +141,7 @@ const Savings3 = ({ data }) => {
               <FontAwesomeIcon
                 icon={faPen}
                 onClick={() => setShow2(!show2)}
-                className={style.pen}
+                className={`${style.pen} pen`}
               />
             </div>
 
@@ -151,6 +152,7 @@ const Savings3 = ({ data }) => {
                 className={style.editContainer}
               >
                 <input
+                  id="edit-second-goal"
                   type="text"
                   placeholder="amount"
                   ref={changeAmount2Ref}
@@ -185,6 +187,7 @@ const Savings3 = ({ data }) => {
         >
           <div>
             <input
+              id="set-first-goal"
               type="text"
               ref={firstGoalAmountRef}
               placeholder={"Set 1st goal"}
@@ -193,6 +196,7 @@ const Savings3 = ({ data }) => {
           </div>
           <div>
             <input
+              id="set-second-goal"
               type="text"
               ref={secondGoalAmountRef}
               placeholder={"Set 2nd goal"}

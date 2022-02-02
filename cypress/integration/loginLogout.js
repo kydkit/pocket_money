@@ -1,6 +1,6 @@
 describe("Test sign in", function () {
   it("Signs in", function () {
-    cy.visit("http://localhost:3000");
+    cy.visit("http://localhost:3001");
 
     cy.get("#email").type("k@gmail.com");
     cy.get("#password").type("test1234{enter}");

@@ -31,7 +31,9 @@ const TransactionDetails = ({ data, isLoading, month }) => {
                         />
                       </span>
                       <div className={style.nameDate}>
-                        <span className={style.itemName}>{item.name}</span>
+                        <span className={`${style.itemName} item-name`}>
+                          {item.name}
+                        </span>
                         <span className={style.itemTime}>{timestamp}</span>
                       </div>
                     </div>
