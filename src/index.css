@@ -30,6 +30,19 @@ input {
   font-size: 20px;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+  box-shadow: #000039;
+    -webkit-box-shadow: 0 0 0 30px #000039 inset !important;
+    -webkit-text-fill-color: #fff;
+}
+
+input, select, textarea{
+  color: #fff;
+}
+
 ::placeholder {
   color: rgb(200, 200, 200);
   font-size: 1rem;
