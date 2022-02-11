@@ -3,7 +3,7 @@ import style from "../css/CategoriesChart.module.css";
 import { PieChart, Tooltip, Pie, Cell } from "recharts";
 
 const CategoriesChart = ({ data }) => {
-  const COLORS = ["#070760", "#4c4c9d", "#9d9df7", "#d0d0ff", "#262651"];
+  const COLORS = ["#014f86", "#0077b6", "#00b4d8", "#90e0ef", "#caf0f8"];
 
   const newDataTotalPerCategory = [];
 
@@ -69,9 +69,10 @@ const CategoriesChart = ({ data }) => {
               nameKey="category"
               cx="50%"
               cy="50%"
+              innerRadius={40}
               outerRadius={90}
               stroke="#fff"
-              fill="#262651"
+              fill="#90e0ef"
             >
               {spentData.map((entry, index) => (
                 <Cell
