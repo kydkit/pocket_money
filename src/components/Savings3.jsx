@@ -91,14 +91,17 @@ const Savings3 = ({ data }) => {
                   <FontAwesomeIcon
                     icon={faStar}
                     className={style.starglowLeft}
+                    color="#ffdab9"
                   />
                   <FontAwesomeIcon
                     icon={faStar}
                     className={style.starglowMid}
+                    color="#ffdab9"
                   />
                   <FontAwesomeIcon
                     icon={faStar}
                     className={style.starglowRight}
+                    color="#ffdab9"
                   />
                 </div>
               </div>
@@ -143,14 +146,17 @@ const Savings3 = ({ data }) => {
                   <FontAwesomeIcon
                     icon={faStar}
                     className={style.starglowLeft}
+                    color="#ffdab9"
                   />
                   <FontAwesomeIcon
                     icon={faStar}
                     className={style.starglowMid}
+                    color="#ffdab9"
                   />
                   <FontAwesomeIcon
                     icon={faStar}
                     className={style.starglowRight}
+                    color="#ffdab9"
                   />
                 </div>
               </div>
