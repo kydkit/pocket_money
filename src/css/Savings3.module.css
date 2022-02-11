@@ -47,6 +47,48 @@
   width: 80px;
 }
 
+.starsContainer {
+  position: relative;
+}
+
+.starglowLeft {
+  position: absolute;
+  height: 20px;
+  animation: animate 3s linear infinite;
+  bottom: 30px;
+}
+.starglowMid {
+  position: absolute;
+  height: 20px;
+  animation: animate 2s linear infinite;
+  bottom: 30px;
+  right: 34px;
+}
+.starglowRight {
+  position: absolute;
+  height: 20px;
+  animation: animate 4s linear infinite;
+  bottom: 30px;
+  right: 6px;
+}
+
+@keyframes animate {
+
+  0%{
+      transform: translateY(0) rotate(0deg);
+      opacity: 1;
+  }
+
+  /* controls how high star travels */
+  100%{
+      transform: translateY(-60px) ;
+      opacity: 0;
+  }
+
+}
+
+
+
 .amountContainer {
   margin-top: 16px;
 }
