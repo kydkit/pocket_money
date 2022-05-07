@@ -7,40 +7,20 @@ const CategoriesChart = ({ data }) => {
 
   const newDataTotalPerCategory = [];
 
-  const householdTotal = Math.abs(
-    data
-      .filter((item) => item.category === "Household")
-      .map((item) => item.amount)
-      .reduce((a, b) => a + b, 0)
-  );
+  const getCategoryTotal = (category) => {
+    return Math.abs(
+      data
+        .filter((item) => item.category === category)
+        .map((item) => item.amount)
+        .reduce((a, b) => a + b, 0)
+    );
+  };
 
-  const transportTotal = Math.abs(
-    data
-      .filter((item) => item.category === "Transport")
-      .map((item) => item.amount)
-      .reduce((a, b) => a + b, 0)
-  );
-
-  const foodTotal = Math.abs(
-    data
-      .filter((item) => item.category === "Food")
-      .map((item) => item.amount)
-      .reduce((a, b) => a + b, 0)
-  );
-
-  const shoppingTotal = Math.abs(
-    data
-      .filter((item) => item.category === "Shopping")
-      .map((item) => item.amount)
-      .reduce((a, b) => a + b, 0)
-  );
-
-  const otherTotal = Math.abs(
-    data
-      .filter((item) => item.category === "Other")
-      .map((item) => item.amount)
-      .reduce((a, b) => a + b, 0)
-  );
+  const householdTotal = getCategoryTotal("Household");
+  const transportTotal = getCategoryTotal("Transport");
+  const foodTotal = getCategoryTotal("Food");
+  const shoppingTotal = getCategoryTotal("Shopping");
+  const otherTotal = getCategoryTotal("Other");
 
   newDataTotalPerCategory.push(
     { category: "Household", amount: householdTotal },
